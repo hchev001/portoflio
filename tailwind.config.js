@@ -17,6 +17,7 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      btgray: "#5E5E63",
       plomo: {
         100: "#F6F6F6",
         200: "#E4E4E4",
@@ -28,8 +29,24 @@ module.exports = {
         800: "#4C4C4C",
         900: "#2F2F2F",
       },
+      haze: {
+        100: "#F4F7F9",
+        200: "#ECEFF1",
+        300: "#E5EAF0",
+        400: "#DEE5EB",
+        500: "#D6DDE2",
+        600: "#CED6D9",
+        700: "#BFC7CA",
+        800: "#AAB4B8",
+        900: "#96A1A5",
+        1000: "#808B8F",
+      },
     },
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        barlow: ["var(--font-barlow)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  font-size: 72px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: -1.25px;
+}
+
+h2 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.small {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 2px;
+}
+
+.tag {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 6%;
+}
+
+button {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+
+
+
+
 :root {
   --foreground-rgb: 246, 246, 246;
   --background-start-rgb: 214, 219, 220;
