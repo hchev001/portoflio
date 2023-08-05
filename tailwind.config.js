@@ -1,11 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = require("tailwindcss/colors");
+const { nextui } = require("@nextui-org/react");
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
@@ -18,6 +20,7 @@ module.exports = {
       indigo: colors.indigo,
       yellow: colors.yellow,
       btgray: "#5E5E63",
+      btwhite: "#F1F1F1",
       plomo: {
         100: "#F6F6F6",
         200: "#E4E4E4",
@@ -54,5 +57,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui()],
 };
