@@ -22,7 +22,10 @@ export default function Home() {
                 web apps, actively seeking work opportunities.
               </p>
               <div>
-                <button className=" px-4 py-2 text-lg bg-white rounded-lg border font-inter text-plomo-600 hover:text-btgray hover:bg-gray-100 drop-shadow-sm">
+                <button
+                  className=" px-4 py-2 text-lg bg-white rounded-lg border font-inter text-plomo-600 hover:text-btgray hover:bg-gray-100 drop-shadow-sm disabled:opacity-30 disabled:pointer-events-none"
+                  disabled
+                >
                   Let's Connect!
                 </button>
               </div>

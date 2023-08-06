@@ -2,8 +2,10 @@
 
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, HomeIcon, UserIcon } from "@heroicons/react/20/solid";
+import { HomeIcon, UserIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import Image from "next/image";
+import Bar3Icon from "../../public/bar3.svg";
 
 //@ts-ignore
 function classNames(...classes) {
@@ -14,8 +16,8 @@ export default function MenuDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left rounded-md">
       <div>
-        <Menu.Button className="inline-flex w-[60px] justify-center gap-x-1.5 rounded-full bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          <Bars3Icon className="text-2xl text-btgray" aria-hidden="true" />
+        <Menu.Button className="inline-flex w-[60px] justify-center gap-x-1.5 rounded-full bg-white p-4 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+          <Image height={32} src={Bar3Icon} priority alt="Menu Icon" />
         </Menu.Button>
       </div>
 
