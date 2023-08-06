@@ -1,11 +1,7 @@
 import Footer from "@/components/Footer";
 import MenuBar from "@/components/MenuBar";
 import Image from "next/image";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 
-import coffee_photo from "../../../public/coffee_shop.jpeg";
-import angie_ham_photo from "../../../public/angie_hamilton_italy.jpg";
 import selfie from "../../../public/georgia_selfie.jpeg";
 export default function About() {
   return (
