@@ -1,42 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import massiveuIcon from "../../public/massiveu.svg";
 import talogyIcon from "../../public/logo_talogy_bubble.svg";
 import shopmonkeyIcon from "../../public/shopmonkey-icon.svg";
-import hamilton_avatar from "../../public/avatar_hamilton.svg";
-import { ImLinkedin, ImGithub } from "react-icons/im";
-
-import MenuDropdown from "@/components/MenuButton";
-import Link from "next/link";
+import MenuBar from "@/components/MenuBar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between bg-plomo-100 p-4 md:px-24 pt-8">
         <div className="z-10 w-full max-w-5xl items-center justify-between text-sm flex flex-col">
-          {/* The menu bar */}
-          <div className="fixed xl:max-w-5xl w-full flex justify-between px-2 xl:px-0">
-            <div className="relative w-[60px] h-[60px] bg-white rounded-full overflow-hidden">
-              <Image
-                className="absolute top-0 left-0 translate-x-3 translate-y-2"
-                height={40}
-                priority
-                src={hamilton_avatar}
-                alt="Hamilton Memoji"
-              />
-            </div>
-            <div className="h-[60px] flex gap-3 py-1.5 px-1.5 rounded-[60px] drop-shadow-[0px_4px_48px_rgba(0,0,0,0.12)] bg-haze-100 text-btgray">
-              <button className="bg-white py-2 px-4 rounded-[60px] drop-shadow-sm">
-                Work
-              </button>
-              <button className="text-plomo-300 py-2 px-4 rounded-[60px] bg-plomo-100">
-                Projects
-              </button>
-            </div>
-            <MenuDropdown />
-          </div>
-
+          <MenuBar />
           {/* the hero */}
           <div className="w-full max-w-4xl mt-28 lg:mt-32 mb-20 p-5">
             <div className="w-full flex flex-col items-center gap-3">
@@ -154,19 +128,7 @@ as a centerpiece of a new platform aimed at consolidating multiple web applicati
           </div>
         </div>
       </main>
-      <div className="bg-haze-200 w-full h-32 flex justify-center items-center">
-        <div className="flex gap-12 text-3xl text-btgray">
-          <Link
-            href="https://www.linkedin.com/in/hamilton-chevez/"
-            target="_blank"
-          >
-            <ImLinkedin />
-          </Link>
-          <Link href="https://github.com/hchev001" target="_blank">
-            <ImGithub />
-          </Link>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }

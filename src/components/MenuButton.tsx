@@ -1,6 +1,9 @@
+"use client";
+
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, HomeIcon, UserIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 //@ts-ignore
 function classNames(...classes) {
@@ -29,8 +32,8 @@ export default function MenuDropdown() {
           <div className="p-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <Link
+                  href="/"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-plomo-600",
                     "px-4 py-2 text-md rounded-md flex items-center"
@@ -38,20 +41,20 @@ export default function MenuDropdown() {
                 >
                   <HomeIcon className="mr-3 text-md inline-block h-6" />
                   Home
-                </a>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="#"
+                <Link
+                  href="/about"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-plomo-600",
                     "px-4 py-2 text-md rounded-md flex items-center"
                   )}
                 >
                   <UserIcon className="mr-3 inline-block h-6" /> About
-                </a>
+                </Link>
               )}
             </Menu.Item>
           </div>
