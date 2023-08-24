@@ -8,7 +8,7 @@ import MenuBar from "@/components/MenuBar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { cn } from "@/utils";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const [content, setContent] = useState<"work" | "projects">("work");
@@ -39,8 +39,10 @@ export default function Home() {
             </div>
           </div>
 
-          {content === "work" && <EmploymentHistory />}
-          {content === "projects" && <Projects />}
+          <AnimatePresence>
+            {content === "work" && <EmploymentHistory key="1" />}
+            {content === "projects" && <Projects key="2" />}
+          </AnimatePresence>
         </div>
       </main>
       <Footer />
