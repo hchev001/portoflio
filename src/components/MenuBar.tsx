@@ -6,8 +6,8 @@ import MenuDropdown from "./MenuButton";
 import { cn } from "@/utils";
 
 interface MenuBarProps {
-  content: "projects" | "work";
-  setContent: (content: "projects" | "work") => void;
+  content?: "projects" | "work";
+  setContent?: (content: "projects" | "work") => void;
 }
 
 const MenuBar = ({ content, setContent }: MenuBarProps) => {
@@ -22,30 +22,32 @@ const MenuBar = ({ content, setContent }: MenuBarProps) => {
           alt="Hamilton Memoji"
         />
       </div>
-      <div
-        className={
-          "h-[60px] flex gap-3 py-1.5 px-1.5 rounded-[60px] drop-shadow-[0px_4px_48px_rgba(0,0,0,0.12)] bg-haze-100 text-btgray"
-        }
-      >
-        <button
-          className={cn("py-2 px-4 rounded-[60px]", {
-            "bg-white drop-shadow-sm": content === "work",
-            "bg-plomo-100": content === "projects",
-          })}
-          onClick={() => setContent("work")}
+      {content && setContent && (
+        <div
+          className={
+            "h-[60px] flex gap-3 py-1.5 px-1.5 rounded-[60px] drop-shadow-[0px_4px_48px_rgba(0,0,0,0.12)] bg-haze-100 text-btgray"
+          }
         >
-          Work
-        </button>
-        <button
-          className={cn("py-2 px-4 rounded-[60px]", {
-            "bg-white drop-shadow-sm": content === "projects",
-            "bg-plomo-100 text-plomo-300": content === "work",
-          })}
-          onClick={() => setContent("projects")}
-        >
-          Projects
-        </button>
-      </div>
+          <button
+            className={cn("py-2 px-4 rounded-[60px]", {
+              "bg-white drop-shadow-sm": content === "work",
+              "bg-plomo-100": content === "projects",
+            })}
+            onClick={() => setContent("work")}
+          >
+            Work
+          </button>
+          <button
+            className={cn("py-2 px-4 rounded-[60px]", {
+              "bg-white drop-shadow-sm": content === "projects",
+              "bg-plomo-100 text-plomo-300": content === "work",
+            })}
+            onClick={() => setContent("projects")}
+          >
+            Projects
+          </button>
+        </div>
+      )}
       <MenuDropdown />
     </div>
   );
