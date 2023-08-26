@@ -19,6 +19,7 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      blue: colors.blue,
       btgray: "#5E5E63",
       btwhite: "#F1F1F1",
       plomo: {
