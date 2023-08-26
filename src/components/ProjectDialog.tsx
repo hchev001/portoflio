@@ -22,11 +22,11 @@ const ProjectDialog = ({
       {children}
       <Dialog.Portal>
         <Dialog.Overlay className=" data-[state=open]:animate-overlayShow fixed inset-0 bg-gray-900 z-40 opacity-90" />
-        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-50">
-          <Dialog.Title className="text-mauve12 m-0 text-[17px] font-medium text-center">
-            <h2>{project.title}</h2>
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] h-[85vh] max-h-[85vh] w-[90vw] max-w-[450px] sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-50">
+          <Dialog.Title className="text-mauve12 m-0 text-[17px] font-medium text-center ">
+            <h2 className="my-1">{project.title}</h2>
           </Dialog.Title>
-          <Dialog.Description className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Dialog.Description className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 h-[90%] overflow-y-scroll no-scrollbar">
             <div
               className="inset-0 bg-cover bg-center rounded-lg w-full py-40 shadow-md border-2 justify-self-center"
               style={{ backgroundImage: `url(${project.coverImage})` }}
