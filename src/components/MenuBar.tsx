@@ -4,6 +4,7 @@ import Image from "next/image";
 import hamilton_avatar from "../../public/avatar_hamilton.svg";
 import MenuDropdown from "./MenuButton";
 import { cn } from "@/utils";
+import { motion } from "framer-motion";
 
 interface MenuBarProps {
   content?: "projects" | "work";
@@ -12,7 +13,12 @@ interface MenuBarProps {
 
 const MenuBar = ({ content, setContent }: MenuBarProps) => {
   return (
-    <div className="fixed z-50 xl:max-w-5xl w-full flex justify-between px-2 xl:px-0">
+    <motion.div
+      className="fixed z-50 xl:max-w-5xl w-full flex justify-between px-2 xl:px-0"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="relative w-[60px] h-[60px] bg-white rounded-full overflow-hidden">
         <Image
           className="absolute top-0 left-1 translate-x-2 translate-y-2"
@@ -49,7 +55,7 @@ const MenuBar = ({ content, setContent }: MenuBarProps) => {
         </div>
       )}
       <MenuDropdown />
-    </div>
+    </motion.div>
   );
 };
 
