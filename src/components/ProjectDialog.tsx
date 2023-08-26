@@ -1,6 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import React, { ReactNode } from "react";
+import React from "react";
 import Link from "next/link";
 import { Project } from "@/data/projects";
 import { ImGithub } from "react-icons/im";

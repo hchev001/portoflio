@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils";
 import { motion } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import ProjectDialog from "../ProjectDialog";
 import { Project, projectData } from "@/data/projects";
 
