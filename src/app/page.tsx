@@ -103,10 +103,10 @@ const Projects = ({ className }: ProjectsProps) => {
   return (
     <motion.div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 items-stretch gap-5 mb-16 duration-400",
+        "grid grid-cols-1 md:grid-cols-3 items-stretch gap-5 mb-16",
         className
       )}
-      initial={{ opacity: 0 }}
+      initial={true}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
