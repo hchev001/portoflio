@@ -2,9 +2,6 @@ import { cn } from "@/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { JobCard } from "./JobCard";
-// import massiveuIcon from "/massiveu.svg";
-// import talogyIcon from "/logo_talogy_bubble.svg";
-// import shopmonkeyIcon from "/shopmonkey-icon.svg";
 
 interface EmploymentHistoryProps {
   className?: string;

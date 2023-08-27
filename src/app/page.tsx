@@ -2,19 +2,19 @@
 
 import MenuBar from "@/components/MenuBar";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import EmploymentHistory from "@/components/employment";
 import Projects from "@/components/projects";
+import { useAppStore } from "@/store";
 
 export default function Home() {
-  const [content, setContent] = useState<"work" | "projects">("work");
+  const { content } = useAppStore();
 
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between bg-plomo-100 p-4 md:px-24 pt-8">
         <div className="z-10 w-full max-w-5xl items-center justify-between text-sm flex flex-col">
-          <MenuBar content={content} setContent={setContent} />
+          <MenuBar />
           {/* the hero */}
           <div className="w-full max-w-4xl mt-28 lg:mt-32 mb-20 p-5">
             <div className="w-full flex flex-col items-center gap-3">

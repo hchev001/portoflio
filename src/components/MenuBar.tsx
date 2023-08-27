@@ -4,20 +4,32 @@ import Image from "next/image";
 import hamilton_avatar from "../../public/avatar_hamilton.svg";
 import MenuDropdown from "./MenuButton";
 import { cn } from "@/utils";
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
+import { useAppStore } from "@/store";
+import { useEffect } from "react";
 
-interface MenuBarProps {
-  content?: "projects" | "work";
-  setContent?: (content: "projects" | "work") => void;
-}
+const MenuBar = () => {
+  const { content, setContent } = useAppStore();
+  const [scope, animate] = useAnimate();
 
-const MenuBar = ({ content, setContent }: MenuBarProps) => {
+  useEffect(() => {
+    const animateLabel = animate(
+      scope.current,
+      {
+        x: content === "projects" ? [0, 92] : [92, 0],
+        width: content === "work" ? 60 : 88,
+      },
+      { duration: 0.4 }
+    );
+    animateLabel.play();
+  }, [content]);
+
   return (
     <motion.div
       className="fixed z-50 xl:max-w-5xl w-full flex justify-between px-2 xl:px-0"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="relative w-[60px] h-[60px] bg-white rounded-full overflow-hidden">
         <Image
@@ -28,32 +40,30 @@ const MenuBar = ({ content, setContent }: MenuBarProps) => {
           alt="Hamilton Memoji"
         />
       </div>
-      {content && setContent && (
+
+      <div
+        className={cn(
+          "relative h-[60px] flex gap-5 py-1.5 px-6 rounded-[60px] drop-shadow-[0px_4px_48px_rgba(0,0,0,0.12)] bg-haze-100 text-btgray"
+        )}
+      >
         <div
-          className={
-            "h-[60px] flex gap-3 py-1.5 px-1.5 rounded-[60px] drop-shadow-[0px_4px_48px_rgba(0,0,0,0.12)] bg-haze-100 text-btgray"
-          }
+          className="absolute left-[6px] top-[6px] py-6 px-10 rounded-[60px] z-10 bg-white drop-shadow-sm h-[20px] w-12"
+          ref={scope}
+        />
+        <button
+          className={cn("rounded-[60px] z-20 mr-6")}
+          onClick={() => setContent("work")}
         >
-          <button
-            className={cn("py-2 px-4 rounded-[60px]", {
-              "bg-white drop-shadow-sm": content === "work",
-              "bg-plomo-100": content === "projects",
-            })}
-            onClick={() => setContent("work")}
-          >
-            Work
-          </button>
-          <button
-            className={cn("py-2 px-4 rounded-[60px]", {
-              "bg-white drop-shadow-sm": content === "projects",
-              "bg-plomo-100 text-plomo-300": content === "work",
-            })}
-            onClick={() => setContent("projects")}
-          >
-            Projects
-          </button>
-        </div>
-      )}
+          Work
+        </button>
+        <button
+          className={cn("rounded-[60px] z-20")}
+          onClick={() => setContent("projects")}
+        >
+          Projects
+        </button>
+      </div>
+
       <MenuDropdown />
     </motion.div>
   );
