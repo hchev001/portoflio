@@ -94,7 +94,7 @@ as a centerpiece of a new platform aimed at consolidating multiple web applicati
         }
         title="Software Engineer"
         company="MassiveU"
-        tenure="FEB 2022 - NOV 2022"
+        tenure="MAY 2021 - FEB 2022"
         text={[
           `Developed pixel-perfect designs for responsive web applications using Bootstrap, SCSS, and LESS to enhance the user experience across multiple screen sizes.`,
           `Pioneered the creation of a resume-like portfolio feature, enabling learners to showcase evaluations on the platform's measured competencies, thereby boosting learner engagement.`,
